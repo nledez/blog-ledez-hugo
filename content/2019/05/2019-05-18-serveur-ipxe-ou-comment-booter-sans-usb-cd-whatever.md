@@ -1,15 +1,16 @@
 ---
-date: 2019-02-17
+date: 2019-05-19
 title: Serveur iPXE ou comment booter sans USB/CD/whatever
 url: /informatique/serveur-ipxe-ou-comment-booter-sans-usb-cd-whatever/
 disqus_url: https://blog.ledez.net/informatique/serveur-ipxe-ou-comment-booter-sans-usb-cd-whatever/
-categories:
-  - Informatique
 tags:
+  - Informatique
   - sysadmin
   - Ubuntu
 excerpt_separator: <!--more-->
 ---
+![iPXE](/images/2019/05/bootroms.jpeg)
+
 Serveur iPXE ou comment booter sans USB/CD/whatever
 
 Avant, quand je voulais (ré)installer une machine, je gravais un CD (bien personnalisé à coup de mkisofs).
@@ -324,6 +325,9 @@ curl http://ipxe.example.com/ipxe/src/bin/undionly.kpxe > undionly.kpxe
 {{< / highlight >}}
 
 Et voilà ce que ça donne :
+
 [Screencast de boot iPXE](https://youtu.be/to5nw1eQ7wI)
+
+{{< youtube to5nw1eQ7wI >}}
 
 Tu peux voir le boot PXE + iPXE avec Memtest86+ puis un début d’installation Ubuntu.

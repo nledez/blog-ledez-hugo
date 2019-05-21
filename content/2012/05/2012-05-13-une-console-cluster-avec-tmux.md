@@ -1,27 +1,22 @@
 ---
-id: 481
-title: Une console cluster avec tmux
 date: 2012-05-13
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=481
+title: Une console cluster avec tmux
 url: /informatique/une-console-cluster-avec-tmux/
-categories:
-  - Informatique
 tags:
+  - Informatique
   - cluster
   - tmux
   - unix
 ---
-Tous ceux qui ont déjà travaillé avec un cluster le savent bien. Il faut avec deux machines &laquo;&nbsp;strictement&nbsp;&raquo; identiques.
+Tous ceux qui ont déjà travaillé avec un cluster le savent bien. Il faut avec deux machines « strictement » identiques.
 
-La meilleure solution est d'avoir une &laquo;&nbsp;console cluster&nbsp;&raquo;. Je n'ai jamais trouvé de solution réellement efficace et pratique à utiliser (la plus pratique celle de SUN).
+La meilleure solution est d'avoir une « console cluster ». Je n'ai jamais trouvé de solution réellement efficace et pratique à utiliser (la plus pratique celle de SUN).
 
 Bref. En parallèle, je voulais regarder ce que [Tmux][1] avait dans le ventre pour remplacer [Screen][2] qui a fait son temps.
 
 Et en pleine lecture de [tmux: Productive Mouse-Free Development][3], je me rends compte qu'il est surement possible d'en faire une super console pour cluster.
 
-Fichier &laquo;&nbsp;.tmux-clust.conf&nbsp;&raquo;
+Fichier « .tmux-clust.conf »
 
 {{< highlight bash >}}
 new-session -d -s clust -n clust1 'ssh clust-root1'
@@ -30,7 +25,7 @@ set -g status-right ""
 source-file ~/.tmux-clust-bc.conf
 {{< / highlight >}}
 
-Fichier &laquo;&nbsp;.tmux-clust-bc.conf&nbsp;&raquo;
+Fichier « .tmux-clust-bc.conf »
 
 {{< highlight bash >}}
 set-window-option synchronize-panes on
@@ -48,7 +43,7 @@ bind o set-window-option synchronize-panes off \; send-keys -t clust:0.0 '192.16
 bind p set-window-option synchronize-panes off \; send-keys -t clust:0.0 '192.168.22.' \; send-keys -t clust:0.1 '192.168.21.' \; set-window-option synchronize-panes on
 {{< / highlight >}}
 
-Fichier &laquo;&nbsp;.tmux-clust-nobc.conf&nbsp;&raquo;
+Fichier « .tmux-clust-nobc.conf »
 
 {{< highlight bash >}}
 set-window-option synchronize-panes off
@@ -66,14 +61,14 @@ bind o send-keys -t clust:0.0 '192.168.21.' \; send-keys -t clust:0.1 '192.168.2
 bind p send-keys -t clust:0.0 '192.168.22.' \; send-keys -t clust:0.1 '192.168.21.'
 {{< / highlight >}}
 
-Et pour finir le fichier &laquo;&nbsp;tmux-clust&nbsp;&raquo;
+Et pour finir le fichier « tmux-clust »
 
 {{< highlight bash >}}
 #!/bin/bash
 tmux -f ~/.tmux-clust.conf attach
 {{< / highlight >}}
 
-Du coup, quand je me connecte avec le script &laquo;&nbsp;tmux-clust&nbsp;&raquo;, il lance une connexion vers clust-root1 et clust-root2 chacun dans un panneau. Et par défaut, on est dans le mode &laquo;&nbsp;bc&nbsp;&raquo; pour broadcast.
+Du coup, quand je me connecte avec le script « tmux-clust », il lance une connexion vers clust-root1 et clust-root2 chacun dans un panneau. Et par défaut, on est dans le mode « bc » pour broadcast.
 
 Les touches :
 
@@ -83,9 +78,10 @@ Les touches :
   * C-b p -> 192.168.22 -> other\_addr\_base
   * C-b r -> Change broadcast mode
 
-&laquo;&nbsp;C-b r&nbsp;&raquo; permet de passer d'un &laquo;&nbsp;mode&nbsp;&raquo; à un autre :  
-&#8211; Vert &laquo;&nbsp;broadcast&nbsp;&raquo; on envoie la purée sur les deux machines en même temps  
-&#8211; Bleu mode normal C-b fléche pour passer de l'un à l'autre
+« C-b r » permet de passer d'un « mode » à un autre :  
+
+- Vert « broadcast » on envoie la purée sur les deux machines en même temps  
+- Bleu mode normal C-b fléche pour passer de l'un à l'autre
 
 Et voila, une console cluster en mieux :p
 

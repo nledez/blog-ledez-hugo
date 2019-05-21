@@ -1,20 +1,16 @@
 ---
-id: 410
-title: Vagrant ou les VM pour les nuls
-author: Nicolas Ledez
 date: 2012-02-19
-layout: post
-guid: http://blog.ledez.net/?p=410
+title: Vagrant ou les VM pour les nuls
+disqus_url: http://blog.ledez.net/informatique/vagrant-ou-les-vm-pour-les-nuls/
 url: /informatique/vagrant-ou-les-vm-pour-les-nuls/
-categories:
-  - Informatique
 tags:
+  - Informatique
   - vagran
   - virtualisation
   - vm
 excerpt_separator: <!--more-->
 ---
-<img class="size-medium wp-image-411 alignright" title="Vagrant" src="{{ site.url }}/images/2012/02/vagrant_chilling-300x300.png" alt="" width="300" height="300" srcset="{{ site.url }}/images/2012/02/vagrant_chilling-150x150.png 150w, {{ site.url }}/images/2012/02/vagrant_chilling-300x300.png 300w, {{ site.url }}/images/2012/02/vagrant_chilling.png 350w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2012/02/vagrant_chilling-300x300.png" title="Vagrant" >}}
 
 Pour un administrateur système, la virtualisation est un super jouet.
 
@@ -22,13 +18,13 @@ Et pour un développeur cela peut devenir un super outil, mais tellement compliq
 
 Et c'est là que Vagrant arrive à la rescousse :
 
-  * Pas d'installation d'OS
-  * Pas de réseau à gérer
-  * Partage de fichier simplifié
+* Pas d'installation d'OS
+* Pas de réseau à gérer
+* Partage de fichier simplifié
 
 Bref, c'est dégoutant de simplicité pour un administrateur système.
 
-Mais (il en faut bien un), la prise en main n'est pas forcement très simple&#8230;
+Mais (il en faut bien un), la prise en main n'est pas forcement très simple...
 
 <!--more-->
 
@@ -43,13 +39,13 @@ Package : c'est la version compressée d'un modèle de VM.
 
 On télécharge un package pour l'installer en tant que box. Une instance de VM peut être convertie en package.
 
-[<img class="alignnone size-medium wp-image-419" title="Workflow Vagrant" src="{{ site.url }}/images/2012/02/vagrant-300x186.png" alt="" width="300" height="186" srcset="{{ site.url }}/images/2012/02/vagrant-300x186.png 300w, {{ site.url }}/images/2012/02/vagrant.png 741w" sizes="(max-width: 300px) 100vw, 300px" />][1]
+{{< figure src="/images/2012/02/vagrant.png" title="Workflow Vagrant" >}}
 
 ### Installation de VirtualBox
 
-<img class="size-full wp-image-416 alignright" title="Virtual Box" src="{{ site.url }}/images/2012/02/vbox_logo2_gradient.png" alt="" width="140" height="180" />
+{{< figure src="/images/2012/02/vbox_logo2_gradient.png" title="Virtual Box" >}}
 
-La première chose à faire est d'installer Virtual Box : direction [le site de Virtual Box][2]. Prenez l'installeur qui correspond à votre système d'exploitation. Attention Vagrant ne supporte que les versions VirtualBox 4.0.x et 4.1.x. Il y a peut-être une solution pour votre distribution Linux du style package tout prêt. Et je ne sais absolument pas ce que ça donne sous Windows.
+La première chose à faire est d'installer Virtual Box : direction [le site de Virtual Box][1]. Prenez l'installeur qui correspond à votre système d'exploitation. Attention Vagrant ne supporte que les versions VirtualBox 4.0.x et 4.1.x. Il y a peut-être une solution pour votre distribution Linux du style package tout prêt. Et je ne sais absolument pas ce que ça donne sous Windows.
 
 ### Installation de Vagrant
 
@@ -97,7 +93,7 @@ Par notre box installé tout à l'heure :
 config.vm.box = "lucid64"
 {{< / highlight >}}
 
-Et maintenant lancer la création de la VM. Attention c'est magique <img src="{{ site.url }}/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" /> :
+Et maintenant lancer la création de la VM. Attention c'est magique :) :
 
 {{< highlight bash >}}
 $ vagrant up
@@ -155,7 +151,7 @@ J'ai trouvé pas mal de solutions, mais trop compliqué et/ou qui télécharges 
 Un petit backup :
 
 {{< highlight bash >}}
-$ tar cvzf ~/.vagrant.d/backup/lucid64.tgz ~/.vagrant.d/boxes/lucid64                                                 !7295
+$ tar cvzf ~/.vagrant.d/backup/lucid64.tgz ~/.vagrant.d/boxes/lucid64
 tar: Removing leading '/' from member names
 a ~/.vagrant.d/boxes/lucid64
 a ~/.vagrant.d/boxes/lucid64/box-disk1.vmdk
@@ -176,7 +172,7 @@ $ vagrant up
 $ vagrant ssh
 {{< / highlight >}}
 
-La fenêtre de la VM va s'ouvrir en parallèle. Sélectionner cette fenêtre et dans le menu &laquo;&nbsp;Périphérique / installer les additions invitées&nbsp;&raquo;
+La fenêtre de la VM va s'ouvrir en parallèle. Sélectionner cette fenêtre et dans le menu « Périphérique / installer les additions invitées »
 
 Donc maintenant nous sommes dans la VM :
 
@@ -311,16 +307,14 @@ $ vagrant up
 [default] -- v-root: /vagrant
 {{< / highlight >}}
 
-Si vous avez compris comment mettre à jours la box, immaginez vous faire la même chose avec l'installation de middleware (Apache, Nginx, PHP, Rails, &#8230;) <img src="{{ site.url }}/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+Si vous avez compris comment mettre à jours la box, immaginez vous faire la même chose avec l'installation de middleware (Apache, Nginx, PHP, Rails, &#8230;) :)
 
 Prochain épisode ? Déploiment d'un environnement pour héberger du Rails ?
 
 Vous pouvez demander si vous avez d'autres idées d'articles.
 
 Edit:  
-Je me suis posé la question d’où est-ce que je pouvais trouver des boxes toutes prêtes. Parce que bon, Ubuntu 64bits c'est bien. Mais moi j'ai aussi de la Debian <img src="{{ site.url }}/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" />  
-J'ai trouvé http://vagrantbox.es/ et je me suis rendu compte après que [@Ethernitys][3] l'avait ajouté dans un Tweet qui concernait cet article.
+Je me suis posé la question d’où est-ce que je pouvais trouver des boxes toutes prêtes. Parce que bon, Ubuntu 64bits c'est bien. Mais moi j'ai aussi de la Debian :)  
+J'ai trouvé http://vagrantbox.es/ et je me suis rendu compte après que @Ethernitys l'avait ajouté dans un Tweet qui concernait cet article.
 
- [1]: {{ site.url }}/images/2012/02/vagrant.png
- [2]: https://www.virtualbox.org/wiki/Downloads "Le téléchargement de Virtual Box"
- [3]: http://twitter.com/#!/Ethernitys "@Ethernitys"
+ [1]: https://www.virtualbox.org/wiki/Downloads "Le téléchargement de Virtual Box"

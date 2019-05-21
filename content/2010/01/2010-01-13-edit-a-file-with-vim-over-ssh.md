@@ -1,20 +1,15 @@
 ---
-id: 128
 date: 2010-01-13
 title: Edit a file with vim over ssh
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=128
 url: /informatique/edit-a-file-with-vim-over-ssh/
-categories:
+tags:
   - Informatique
   - Tips
-tags:
-  - ssh
-  - tips
-  - vim
+  - Ssh
+  - Vim
 ---
-Next step of [{{ site.url }}informatique/tips/editer-un-fichier-directement-en-ftp-avec-vim/][1]
+
+Next step of [Edit a file with vim over FTP](/informatique/tips/editer-un-fichier-directement-en-ftp-avec-vim/)
 
 I would like to edit /etc/init.d/squid on bozzo host:
 
@@ -30,4 +25,3 @@ vim scp://bozzo/etc/init.d/squid
 
 vim edit the file &laquo;&nbsp;etc/init.d/squid&nbsp;&raquo; in user home directory (/root/etc/squid/squid.conf in normal root account)
 
- [1]: {{ site.url }}informatique/tips/editer-un-fichier-directement-en-ftp-avec-vim/ "Edit a file with vim over FTP"

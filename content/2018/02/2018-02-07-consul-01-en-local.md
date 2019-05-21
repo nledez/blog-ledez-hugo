@@ -3,14 +3,12 @@ title: Consul 01 - en local
 date: 2018-02-07
 layout: post
 url: /informatique/devops/consul-01-en-local/
-categories:
-  - DevOps
 tags:
-  - devops
+  - DevOps
   - consul
 excerpt_separator: <!--more-->
 ---
-![PCi, Terraform, Ansible, Consul & Co.]({{ site.url }}/images/2018/01/LogoArticlesPC_Terraform_Ansible_Consul_HAProxy.png)
+{{< figure src="/images/2018/01/LogoArticlesPC_Terraform_Ansible_Consul_HAProxy.png" title="PCi, Terraform, Ansible, Consul & Co." >}}
 
 Pour commencer à jouer un peu avec Consul, on va le faire tourner en local.
 
@@ -41,12 +39,16 @@ cp ex.consul/* config.d
 {{< / highlight >}}
 
 Voici le contenu de chaque fichier :
+
+config.d/bootstrap.json
 {{< highlight json >}}
-==== config.d/bootstrap.json
 {
     "bootstrap": true
 }
-==== config.d/server.json
+{{< / highlight >}}
+
+config.d/server.json
+{{< highlight json >}}
 {
     "server": true,
     "datacenter": "dc1",
@@ -55,7 +57,10 @@ Voici le contenu de chaque fichier :
     "start_join": ["127.0.0.1"],
     "log_level": "INFO"
 }
-==== config.d/ui.json
+{{< / highlight >}}
+
+config.d/ui.json
+{{< highlight json >}}
 {
     "ui": true
 }
@@ -69,6 +74,7 @@ Voici le contenu de chaque fichier :
 Le paramètre `bootstrap` est à positionner sur un (uniquement un) des serveurs dans le cluster. C'est pour simplifier les élections. Quand les élections n'arrivent pas à se faire (coucou les Belges), celui-là est le dictateur et s'élit de "force".
 
 Il y a deux modes pour les services Consul :
+
  * Agent
  * Serveur
 
@@ -186,9 +192,9 @@ serf_wan:
 
 Si tu te connectes sur [http://127.0.0.1:8500/ui/](http://127.0.0.1:8500/ui/) tu auras l'IHM de Consul :
 
-![Consul UI liste des services]({{ site.url }}/images/2018/02/consul-01-services.png)
-![Consul UI liste des noeuds]({{ site.url }}/images/2018/02/consul-02-nodes.png)
-![Consul UI liste des clés/valeurs]({{ site.url }}/images/2018/02/consul-03-kv-empty.png)
+{{< figure src="/images/2018/02/consul-01-services.png" title="Consul UI liste des services" >}}
+{{< figure src="/images/2018/02/consul-02-nodes.png" title="Consul UI liste des noeuds" >}}
+{{< figure src="/images/2018/02/consul-03-kv-empty.png" title="Consul UI liste des clés/valeurs" >}}
 
 On va maintenant jouer avec la base de donnée clé/valeur (KV) :
 {{< highlight bash >}}
@@ -202,7 +208,7 @@ $ consul kv get dossier/value
 
 Tu peux vérifier dans l'IHM à chaque étape. Voir si ça bouge. Ou même faire les manipulations dans l'UI.
 
-![Consul UI avec des clés qui ont des valeurs]({{ site.url }}/images/2018/02/consul-04-with-value.png)
+{{< figure src="/images/2018/02/consul-04-with-value.png" title="Consul UI avec des clés qui ont des valeurs" >}}
 
 Et maintenant un petit peu de ménage :
 
@@ -216,6 +222,8 @@ Success! Deleted key: dossier/
 Voilà, nous avons déjà vu pas mal de choses avec Consul.
 
 La screencast qui correspond est disponible sur [Youtube](https://youtu.be/gbSQZf_x3DA).
+
+{{< youtube gbSQZf_x3DA >}}
 
 N'hésitez pas à partager, poser des questions, faire des remarques.
 

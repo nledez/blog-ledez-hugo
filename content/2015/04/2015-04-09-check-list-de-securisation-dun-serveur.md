@@ -1,22 +1,18 @@
 ---
-id: 2368
-title: Check-list de sécurisation d'un serveur
 date: 2015-04-09
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=2368
+title: Check-list de sécurisation d'un serveur
 url: /informatique/check-list-de-securisation-dun-serveur/
-categories:
-  - DevOps
-  - Informatique
-  - Tips
+disqus_url: https://blog.ledez.net/informatique/check-list-de-securisation-dun-serveur/
 tags:
   - adminsys
   - Sécurité
+  - DevOps
+  - Informatique
+  - Tips
 excerpt_separator: <!--more-->
 ---
 <div id="attachment_2373" style="width: 310px" class="wp-caption alignnone">
-  <a href="{{ site.url }}/images/2015/04/Flat-coated_Retriever_Molly.jpg"><img class="size-medium wp-image-2373" src="{{ site.url }}/images/2015/04/Flat-coated_Retriever_Molly-300x225.jpg" alt="Pour ne pas finir à poil sur Internet" width="300" height="225" srcset="{{ site.url }}/images/2015/04/Flat-coated_Retriever_Molly-300x225.jpg 300w, {{ site.url }}/images/2015/04/Flat-coated_Retriever_Molly.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a href="/images/2015/04/Flat-coated_Retriever_Molly.jpg"><img class="size-medium wp-image-2373" src="/images/2015/04/Flat-coated_Retriever_Molly-300x225.jpg" alt="Pour ne pas finir à poil sur Internet" width="300" height="225" srcset="/images/2015/04/Flat-coated_Retriever_Molly-300x225.jpg 300w, /images/2015/04/Flat-coated_Retriever_Molly.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" /></a>
   
   <p class="wp-caption-text">
     Pour ne pas finir à poil sur Internet

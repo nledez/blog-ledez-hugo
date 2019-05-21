@@ -6,19 +6,18 @@ author: Nicolas Ledez
 layout: post
 disqus_url: http://blog.ledez.net/?p=2412
 url: /informatique/systemd-docker-et-la-resistance-au-changement/
-categories:
+tags:
   - Informatique
   - OpenSource
-tags:
   - docker
   - systemd
 excerpt_separator: <!--more-->
 ---
-![Systemd avenir]({{ site.url }}/images/2015/06/systemd-avenir-300x229.jpg)
+{{< figure src="/images/2015/06/systemd-avenir-300x229.jpg" title="Systemd avenir" >}}
 
 Comme tout bon sysadmin barbu, bourru et qui tourne à la caféine en intraveineuse, je n'aime pas le changement dans mes habitudes de travail.
 
-Par contre, j'aime la ligne de commande. Les fichiers texte à plat. Les choses simples en sommes. Comme je le dis souvent &laquo;&nbsp;Si on fait simple. On prend le risque que cela marche&nbsp;&raquo;.
+Par contre, j'aime la ligne de commande. Les fichiers texte à plat. Les choses simples en sommes. Comme je le dis souvent « Si on fait simple. On prend le risque que cela marche ».
 
 Et bien, parlons de systemd !  
 
@@ -34,7 +33,7 @@ Ce que les détracteurs du système on sortis comme arguments :
   * systemd est difficile
   * systemd n'est pas modulaire
   * systemd utilise de fichier de configuration binaire
-  * &#8230;
+  * ...
 
 La liste complète en VO ici : [http://0pointer.net/blog/projects/the-biggest-myths.html.][2]
 
@@ -42,11 +41,11 @@ Pendant un moment, j'ai fait partie de ceux qui ont trainé des pieds. Et puis c
 
 Et comme j'aime avoir mal (je prends une douche froide avant d'aller dans le grand bain à la piscine aussi). Et bien pourquoi ne pas faire un package Debian pour Jessie ?
 
-J'ai &laquo;&nbsp;choisi&nbsp;&raquo; CouchDB pour commencer.
+J'ai « choisi » CouchDB pour commencer.
 
 Le fichier de configuration ressemble à quoi ? Et bien tout simplement :
 
-{% highlight config %}
+{{< highlight config >}}
 [Unit]
 Description=Couchdb service
 After=network.target
@@ -58,10 +57,10 @@ ExecStartPre=-/bin/mkdir -p /var/run/couchdb
 ExecStartPre=/bin/chown -R couchdb:couchdb /var/run/couchdb
 ExecStart=/usr/bin/couchdb -o /dev/stdout -e /dev/stderr
 Restart=always
-{% endhighlight %}
+{{< / highlight >}}
 
 
-Comme tu peux le constater, c'est loin d'être du binaire. Simple à lire et comprendre. Et je ne sais pas pour toi, mais moi perso je n'ai jamais aimé écrire les script init. C'est toujours la galère <img src="{{ site.url }}/images/smilies/frownie.png" alt=":(" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+Comme tu peux le constater, c'est loin d'être du binaire. Simple à lire et comprendre. Et je ne sais pas pour toi, mais moi perso je n'ai jamais aimé écrire les script init. C'est toujours la galère :(
 
 Alors que pour écrire celui-là, j'y ai pris du plaisir (j’en entends dire d’ici que j’aime avoir mal &#8211; c’est surement vrai ^^).
 
@@ -72,11 +71,11 @@ Et en bonus :
   * Le programme peut tourner avec un user dédié facilement (fini les su avec des options à la \***)
   * On peut lancer des actions avant le serveur. Et en tant que root
 
-Bref, j'en suis même à regretter que systemd ne soit pas dans mes autres distribs&#8230;
+Bref, j'en suis même à regretter que systemd ne soit pas dans mes autres distribs...
 
 ## Docker
 
-[<img class="alignnone size-medium wp-image-2417" src="{{ site.url }}/images/2015/06/docker-en-prod-300x290.jpg" alt="Docker en prod" width="300" height="290" srcset="{{ site.url }}/images/2015/06/docker-en-prod-300x290.jpg 300w, {{ site.url }}/images/2015/06/docker-en-prod.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" />][3]
+{{< figure src="/images/2015/06/docker-en-prod.jpg" title="Docker en prod" >}}
 
 Et maintenant Docker. C'est un peu la même chose. J'aime beaucoup le projet. Il promet des choses très intéressantes pour le futur de notre métier.
 
@@ -92,9 +91,15 @@ Tout ça pour en venir à la résistance au changement. Nous les sysadmin bouru,
 
 Donc il ne faut pas trop que cela change. Je me connecte dans ma VM en SSH. Je fais un ps pour voir tous mes process. Mais si je passe à Docker, tout ça va être chamboulé. Et moi en tant que sysadmin, je n'aime pas ça du tout !
 
-Mais comme hier avec me script init, je scriptais, puis : `/etc/init.d/couchdb [stop|start|status]`
+Mais comme hier avec me script init, je scriptais, puis :
+{{< highlight config >}}
+/etc/init.d/couchdb [stop|start|status]
+{{< / highlight >}}
 
-Maintenant, c'est &laquo;&nbsp;`vi /etc/systemd/system/couchdb.service ; systemctl daemon-reload ; systemctl [stop|start|status] couchdb`&nbsp;&raquo;
+Maintenant, c'est :
+{{< highlight config >}}
+vi /etc/systemd/system/couchdb.service ; systemctl daemon-reload ; systemctl [stop|start|status] couchdb
+{{< / highlight >}}
 
 Ça m'a pris un peu de temps pour comprendre comment tout cela marchait. Mais maintenant, je suis plus à l'aise avec le nouveau système. Et je n'ai vraiment pas envie de revenir en arrière.
 
@@ -107,4 +112,3 @@ Arrête de regarder en arrière. Regarde de l'avant. Tu apprendras beaucoup de c
 Bref, vis avec ton temps !
 
  [2]: http://0pointer.net/blog/projects/the-biggest-myths.html
- [3]: {{ site.url }}/images/2015/06/docker-en-prod.jpg

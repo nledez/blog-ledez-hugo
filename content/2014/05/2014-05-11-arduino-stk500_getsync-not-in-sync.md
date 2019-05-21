@@ -1,32 +1,15 @@
 ---
-id: 1004
-title: 'Arduino "stk500_getsync(): not in sync"'
 date: 2014-05-11
+title: 'Arduino "stk500_getsync(): not in sync"'
 author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=1004
 url: /diy/arduino-stk500_getsync-not-in-sync/
-hide_post_title:
-  - default
-unlink_post_title:
-  - default
-hide_post_meta:
-  - default
-hide_post_date:
-  - default
-hide_post_image:
-  - default
-unlink_post_image:
-  - default
-builder_switch_frontend:
-  - 0
-categories:
+tags:
   - DIY
 excerpt_separator: <!--more-->
 ---
-[<img class="alignnone size-full wp-image-1019" src="{{ site.url }}/images/2014/05/BannerArduinoStk500_getsync.jpg" alt="BannerArduinoStk500_getsync" width="751" height="140" />][1]
+{{< figure src="/images/2014/05/BannerArduinoStk500_getsync.jpg" title="BannerArduinoStk500_getsync" >}}
 
-Comme tu as pu voir [ici][2], et [ici][3] j'aime bien les Ardiuno. Mais j'ai rencontré pas mal de problèmes avec les derniers que j'ai reçus.
+J'aime bien les Ardiuno. Mais j'ai rencontré pas mal de problèmes avec les derniers que j'ai reçus.
 
 J'avais souvent l'erreur &laquo;&nbsp;stk500_getsync(): not in sync&nbsp;&raquo;.
 
@@ -36,7 +19,7 @@ Après quelques mois à chercher voici ma solution :<!--more-->
 
 Je suis souvent tombé sur cette erreur :
 
-{% highlight text %}
+{{< highlight text >}}
 avrdude: Version 5.11, compiled on Sep 2 2011 at 18:52:52
 Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
 Copyright (c) 2007-2009 Joerg Wunsch
@@ -55,7 +38,7 @@ avrdude: Recv: . [00]
 avrdude: stk500_getsync(): not in sync: resp=0x00
 
 avrdude done. Thank you.
-{% endhighlight %}
+{{< / highlight >}}
 
 J'ai cherché pendant des heures sur le Net comment résoudre ce &laquo;&nbsp;stk500_getsync(): not in sync: resp=0x00&nbsp;&raquo;.
 
@@ -67,13 +50,13 @@ Au final, la solution (sur mon Mac) était de réinstaller complètement les dri
 
 #### Avec le pl2303hx
 
-{% highlight bash %}
+{{< highlight bash >}}
 cd /System/Library/Extensions
 sudo mv NoZAP-PL2303-10.9.kext ~/Desktop/
 sudo mv ProlificUsbSerial.kext ~/Desktop/
 cd /var/db/receipts
 sudo mv com.prolific.prolificUsbserialCableDriverV151.ProlificUsbSerial.pkg.bom com.prolific.prolificUsbserialCableDriverV151.ProlificUsbSerial.pkg.plist ~/Desktop/
-{% endhighlight %}
+{{< / highlight >}}
 
 Un petit reboot pour être sûr.
 
@@ -86,10 +69,10 @@ Puis l'installer.
 
 #### Et avec le FTDI
 
-{% highlight bash %}
+{{< highlight bash >}}
 cd /System/Library/Extensions
 sudo mv FTDIUSBSerialDriver.kext ~/Desktop/
-{% endhighlight %}
+{{< / highlight >}}
 
 Le petit reboot de précaution.
 
@@ -105,7 +88,3 @@ Le fichier était le &laquo;&nbsp;FTDIUSBSerialDriver\_v2\_2_18.dmg&nbsp;&raquo;
   * Les installations de drivers (il y en a un qui demande de rebooter à la fin et pas l'autre. Mais je ne me souviens plus lesquels)
 
 Enjoy !
-
- [1]: 2014/05/BannerArduinoStk500_getsync.jpg
- [2]: {{ site.url }}/diy/commande-electronique-semaine-1/ "Commande électronique de la semaine #1 – DIY"
- [3]: {{ site.url }}/diy/commande-electronique-semaine-2-diy/ "Commande électronique de la semaine #2 – DIY"

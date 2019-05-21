@@ -1,14 +1,13 @@
 ---
-id: 44
-title: Editer un fichier directement en FTP avec VIM
-author: Nicolas Ledez
-layout: post
 date: 2006-12-11
-guid: http://nicolas.ledez.free.fr/blog/?p=44/2006/12/11/editer-un-fichier-directement-en-ftp-avec-vim/
+title: Editer un fichier directement en FTP avec VIM
 url: /informatique/tips/editer-un-fichier-directement-en-ftp-avec-vim/
-categories:
+disqus_url: http://blog.ledez.net/informatique/tips/editer-un-fichier-directement-en-ftp-avec-vim/
+tags:
+  - Vim
   - Tips
 ---
+
 {{< highlight bash >}}
 vim ftp://mon_utilisateur@mon_serveur_ftp/un_repertoire/un_fichier.ext
 {{< / highlight >}}

@@ -1,15 +1,12 @@
 ---
-id: 1124
-title: Brown Bag Lunches
 date: 2014-05-27
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=1124
+title: Brown Bag Lunches
 url: /blog/brown-bag-lunches/
-categories:
+disqus_url: https://blog.ledez.net/blog/brown-bag-lunches/
+tags:
   - Blog
 ---
-[<img class="alignleft wp-image-1126 size-full" src="{{ site.url }}/images/2014/05/brownBag.png" alt="brownBag" width="200" height="318" />][1]
+{{< figure src="/images/2014/05/brownBag.png" title="brownBag" >}}
 
 La semaine dernière, je me suis ajouté à la liste des baggers : <http://www.brownbaglunch.fr/baggers.html>
 
@@ -19,7 +16,7 @@ Comme [@ndeloof][2], c'est quelque chose que je pratique depuis des années. C'e
 
 Bref, fais ton choix ici :
 
-<{{ site.url }}/keynotes/>
+[Mes présentations](/keynotes/)
 
  [1]: http://www.brownbaglunch.fr/
  [2]: http://blog.loof.fr/2013/02/brown-bag-lunch.html

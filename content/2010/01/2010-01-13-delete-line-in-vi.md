@@ -1,18 +1,13 @@
 ---
-id: 134
-title: Delete line in vi
 date: 2010-01-13
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=134
+title: Delete line in vi
 url: /divers/delete-line-in-vi/
-categories:
+tags:
   - Divers
   - Tips
-tags:
-  - tips
-  - vim
+  - Vim
 ---
+
 To delete line in vi(m) if line respect a pattern :
 
 {{< highlight viml >}}

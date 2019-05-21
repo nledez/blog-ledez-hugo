@@ -1,12 +1,9 @@
 ---
-id: 1132
-title: DevOps, l'industrie, l'informatique et les vaches
 date: 2014-07-07
-author: Nicolas Ledez
-layout: post
-guid: http://blog.ledez.net/?p=1132
+title: DevOps, l'industrie, l'informatique et les vaches
 url: /informatique/devops/devops-lindustrie-linformatique-les-vaches/
-categories:
+disqus_url: https://blog.ledez.net/informatique/devops/devops-lindustrie-linformatique-les-vaches/
+tags:
   - DevOps
 excerpt_separator: <!--more-->
 ---
@@ -25,7 +22,7 @@ excerpt_separator: <!--more-->
 # Mon enfance
 
 <p class="p1">
-  Je suis né en Corrèze. Oui le pays de Chirac, les pommes, la verdure. À l'époque Internet pour personne. Donc je l'ai bien vécu <img src="{{ site.url }}/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Mais comme j'habitais à la campagne, j'avais beaucoup de paysans autour de chez moi. Je me souviens que quand j'étais petit tout le village aller aider le paysan à faire &laquo;&nbsp;le foin&nbsp;&raquo;. Et en échange, dans l'année nous avions le droit d'avoir un peu de lait produit par sa vingtaine de vaches. Ces moments de moisson étaient hyper conviviaux. Mais là, ce n'est plus le sujet.
+  Je suis né en Corrèze. Oui le pays de Chirac, les pommes, la verdure. À l'époque Internet pour personne. Donc je l'ai bien vécu :) Mais comme j'habitais à la campagne, j'avais beaucoup de paysans autour de chez moi. Je me souviens que quand j'étais petit tout le village aller aider le paysan à faire &laquo;&nbsp;le foin&nbsp;&raquo;. Et en échange, dans l'année nous avions le droit d'avoir un peu de lait produit par sa vingtaine de vaches. Ces moments de moisson étaient hyper conviviaux. Mais là, ce n'est plus le sujet.
 </p>
 
 # Ma formation initiale
@@ -34,8 +31,8 @@ excerpt_separator: <!--more-->
   Ensuite j'ai déménagé en Saône et Loire ou j'ai fait un BEP Maintenance des Systèmes Mécaniques Automatisés. En gros apprendre à faire la maintenance d'une chaine de production industrielle. Pour des clients type Potain, PSA, etc. Et sur une chaine de production, la moindre interruption de service coute extrêmement cher (plusieurs dizaines de personnes au chômage technique). J'ai donc appris à :
 </p>
 
-  * Faire de la maintenance proactive (pour éviter que cela ne tombe en panne)
-  * Et la maintenance corrective (pour que la panne dure le moins longtemps possible)
+- Faire de la maintenance proactive (pour éviter que cela ne tombe en panne)
+- Et la maintenance corrective (pour que la panne dure le moins longtemps possible)
 
 <p class="p2">
   Mais finalement je me suis rendu compte que travailler à l'usine ce n'était pas mon truc. Je me suis aussi rendu compte que ma passion pour l'informatique me donnait certaines facilités dans le domaine. J'ai donc terminé mes études dans ce domaine. Je gérais en parallèle mon petit serveur Linux, DNS, DHCP, et ne ne sais plus quoi d'autre, mais j'ai fait mes armes sous Unix à la maison.
@@ -51,18 +48,18 @@ excerpt_separator: <!--more-->
   Donc j'arrive dans le monde du travail à Rennes. Chez Equant dans le service du &laquo;&nbsp;Webhosting&nbsp;&raquo; dans le service dédié à France Telecom. Là, ça a changé :
 </p>
 
-  * Linux vers Solaris
-  * Mysql vers Oracle
-  * PHP vers Java et Websphere
-  * Apache vers iPlanet
+- Linux vers Solaris
+- Mysql vers Oracle
+- PHP vers Java et Websphere
+- Apache vers iPlanet
 
 <p class="p2">
   Par contre, tout ça sur la même machine. Nous installions tout ça avec un joli manuel écrit dans Word, imprimé. Et moi j'aimais bien cocher au fur et à mesure ce que j'avais fait. Quand il y avait des erreurs, je les notais à la main puis reportais tout ça dans un mail au rédacteur du document. Une fois que ça marche en préproduction, je passe sur mon serveur de production. Oui vous avez bien compté :
 </p>
 
-  * Un administrateur système
-  * 2 serveurs
-  * Pour un seul projet
+- Un administrateur système
+- 2 serveurs
+- Pour un seul projet
 
 <p class="p2">
   Voir dans certains cas, nous mutualisions un maximum.
@@ -95,7 +92,7 @@ excerpt_separator: <!--more-->
 </p>
 
 <p class="p2">
-  Et du coup, tout ce temps qui va être libéré va pouvoir être utilisé à faire cette fameuse maintenance proactive et réduire la maintenance curative. Vous allez donc améliorer la vie de votre plate-forme <img src="{{ site.url }}/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+  Et du coup, tout ce temps qui va être libéré va pouvoir être utilisé à faire cette fameuse maintenance proactive et réduire la maintenance curative. Vous allez donc améliorer la vie de votre plate-forme :)
 </p>
 
 <p class="p2">
