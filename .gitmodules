@@ -10,3 +10,9 @@
 [submodule "themes/beautifulhugo"]
 	path = themes/beautifulhugo
 	url = https://github.com/halogenica/beautifulhugo.git
+[submodule "themes/jeffprod"]
+	path = themes/jeffprod
+	url = https://github.com/Tazeg/hugo-blog-jeffprod.git
+[submodule "themes/hugo-octopress"]
+	path = themes/hugo-octopress
+	url = https://github.com/parsiya/Hugo-Octopress.git
